@@ -1,0 +1,78 @@
+#include <iostream>
+using namespace std;
+
+// Function to calculate total marks
+int calculateTotal(int marks[])
+{
+    int total = 0;
+
+    // Loop to add marks
+    for(int i = 0; i < 3; i++)
+    {
+        total = total + marks[i];
+    }
+
+    return total;
+}
+
+// Main function
+int main()
+{
+    // Variables
+    string name;
+    int marks[3];
+    int total;
+    float average;
+    char choice;
+
+    // Loop for multiple students
+    do
+    {
+        // Input student name
+        cout << "Enter student name: ";
+        cin >> name;
+
+        // Input marks using loop
+        for(int i = 0; i < 3; i++)
+        {
+            cout << "Enter marks for subject "
+                 << i + 1 << ": ";
+
+            cin >> marks[i];
+        }
+
+        // Function call
+        total = calculateTotal(marks);
+
+        // Calculate average
+        average = total / 3.0;
+
+        // Display results
+        cout << "\n----- STUDENT RESULT -----\n";
+
+        cout << "Student Name: " << name << endl;
+
+        cout << "Total Marks: " << total << endl;
+
+        cout << "Average: " << average << endl;
+
+        // Condition for pass/fail
+        if(average >= 50)
+        {
+            cout << "Result: PASS" << endl;
+        }
+        else
+        {
+            cout << "Result: FAIL" << endl;
+        }
+
+        // Ask user to continue
+        cout << "\nDo you want to enter another student? (y/n): ";
+        cin >> choice;
+
+    } while(choice == 'y' || choice == 'Y');
+
+    cout << "\nProgram Finished.";
+
+    return 0;
+}
