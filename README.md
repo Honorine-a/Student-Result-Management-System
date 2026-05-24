@@ -1,3 +1,6 @@
+NAMES:Liliane ABIZERA
+Roll number:202510635
+
 Project Description
 
 The Student Result Management System is a simple C++ program that accepts student names and marks for three subjects.
